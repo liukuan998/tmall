@@ -1,0 +1,643 @@
+<!-- <link rel="stylesheet" href="./css/index.css"> -->
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  i {
+    font-style: normal;
+  }
+  .top {
+    width: 100%;
+    height: 32px;
+    background-color: #f2f2f2;
+    min-width: 1230px;
+    border-bottom: 1px solid #ebebeb;
+  }
+  .content {
+    width: 1230px;
+    margin: 0 auto;
+    color: #999;
+    font-size: 12px;
+    line-height: 32px;
+  }
+  .content:after {
+    height: 0;
+    content: "";
+    display: block;
+    overflow: hidden;
+    clear: both;
+  }
+  .top-left {
+    float: left;
+    height: 32px;
+    overflow: hidden;
+  }
+  .top-left li {
+    float: left;
+    margin-right: 20px;
+  }
+  .top-left li:nth-child(2):hover,
+  .top-left li:nth-child(3):hover {
+    color: #ff0036;
+    cursor: pointer;
+  }
+
+  .top-right {
+    float: right;
+    height: 32px;
+  }
+  .top-right > li {
+    float: left;
+    cursor: pointer;
+    height: 32px;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 32px;
+    border-left: 1px solid #f2f2f2;
+    border-right: 1px solid #f2f2f2;
+  }
+  .top-right > li:hover {
+    color: #ff0036;
+    cursor: pointer;
+  }
+  .top-right > li:nth-child(1),
+  .top-right > li:nth-child(3),
+  .top-right > li:nth-child(7) {
+    width: 74px;
+    height: 32px;
+    /* padding: 0 0px 0 10px; */
+  }
+  .top-right > li:nth-child(1) {
+    padding: 0 0px 0 5px;
+    position: relative;
+  }
+  .top-right > li:nth-child(8):hover .iconfont.icon-down,
+  .top-right > li:nth-child(1):hover .iconfont.icon-down,
+  .top-right > li:nth-child(3):hover .iconfont.icon-down,
+  .top-right > li:nth-child(7):hover .iconfont.icon-down {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    color: #999;
+  }
+  .iconfont.icon-down {
+    /* display:inline-block; */
+    font-size: 15px;
+    line-height: 32px;
+    transition: 0.3s;
+  }
+  .top-right > li:nth-child(2) {
+    width: 72px;
+    height: 32px;
+  }
+  .iconfont.icon-ai66 {
+    /* display: inline-block; */
+
+    color: #ff0036;
+    font-size: 16px;
+    margin-right: 3px;
+    /* vertical-align: middle; */
+  }
+  .top-right > li:nth-child(3) {
+    width: 62px;
+    height: 32px;
+    padding-left: 5px;
+    position: relative;
+  }
+  .top-right > li:nth-child(3) .iconfont.icon-down {
+    /* display:inline-block; */
+    font-size: 16px;
+    margin-left: 0px;
+    transition: 0.3s;
+  }
+  .top-right > li:nth-child(4) {
+    width: 1px;
+    height: 14px;
+    margin-top: 9px;
+    z-index: 2;
+    margin-left: 5px;
+    background-color: #ccc;
+    border: none;
+  }
+  .top-right > li:nth-child(5) {
+    width: 72px;
+    height: 34px;
+    position: relative;
+  }
+  .iconfont.icon-shouji {
+    /* display: inline-block; */
+    color: #ff0036;
+    font-size: 12px;
+    /* vertical-align: middle; */
+  }
+  .top-right > li:nth-child(6) {
+    width: 56px;
+    height: 32px;
+  }
+  .top-right > li:nth-child(7) {
+    width: 74px;
+    height: 32px;
+    position: relative;
+  }
+  .top-right > li:nth-child(7) .iconfont.icon-down {
+    margin-left: -2px;
+    transition: 0.3s;
+  }
+  .top-right > li:nth-child(8) .iconfont.icon-down {
+    margin-left: -2px;
+  }
+  .iconfont.icon-sort {
+    color: #ff0036;
+    font-size: 12px;
+  }
+  .top-right > li:nth-child(8) {
+    width: 90px;
+    height: 32px;
+  }
+  .top-right > li:nth-child(8):hover {
+    color: #999;
+  }
+  .iconfont {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* 下划线 */
+  /* .top-right>li:nth-child(1):hover,.top-right>li:nth-child(3):hover,.top-right>li:nth-child(7):hover{
+   text-decoration: underline;
+   background-color: #fff;
+    height: 33px;
+    border-left: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+} */
+  .mine,
+  .collect {
+    position: absolute;
+    top: 33px;
+    left: 0;
+    margin-left: -1px;
+    border: 1px solid #ebebeb;
+    border-top: none;
+    width: 96px;
+    height: 40px;
+    display: none;
+    padding: 10px 0;
+    z-index: 5;
+    background-color: #fff;
+    font-size: 12px;
+  }
+  .mine li,
+  .collect li {
+    text-align: center;
+    line-height: 20px;
+    height: 20px;
+  }
+  .top-right .collect {
+    width: 90px;
+    padding: 10px 0;
+    height: 40px;
+  }
+
+  .code {
+    position: absolute;
+    width: 175px;
+    height: 227px;
+    background-color: #fff;
+    left: -48px;
+    top: 26px;
+    box-shadow: 0 0 5px #aaa;
+    z-index: 5;
+    display: none;
+  }
+  .codeTop {
+    width: 175px;
+    height: 175px;
+    background: url("http://img.alicdn.com/tfs/TB1vJ0POwTqK1RjSZPhXXXfOFXa-175-215.png")
+      no-repeat;
+    background-size: cover;
+  }
+  .codeBot {
+    width: 175px;
+    height: 52px;
+    background: url("http://img.alicdn.com/tfs/TB1W.19bG67gK0jSZFHXXa9jVXa-145-30.jpg")
+      no-repeat;
+    background-size: 155px 35px;
+    background-position: 10px 5px;
+    /* padding-top: 17px; */
+  }
+  .codeJiao {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 20px;
+    z-index: 2;
+    left: 30px;
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    display: none;
+  }
+  .surport {
+    position: absolute;
+    top: 33px;
+    right: 0;
+    margin-right: -1px;
+    border: 1px solid #ebebeb;
+    background-color: #fff;
+    border-top: none;
+    width: 122px;
+    padding: 0 10px;
+    height: 175px;
+    z-index: 5;
+    display: none;
+  }
+  .surportTop {
+    width: 122px;
+    height: 112px;
+    border-bottom: 1px dashed #999;
+  }
+  .surport p {
+    text-align: left;
+    height: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  .surport li {
+    float: left;
+    /* margin-right: 20px; */
+    height: 22px;
+    line-height: 22px;
+  }
+  .surport li:nth-child(odd) {
+    margin-right: 20px;
+  }
+  .surportBottom {
+    height: 45px;
+    border-bottom: 1px dashed #999;
+  }
+  .webNav {
+    position: relative;
+  }
+  .webNav:hover {
+    text-decoration: none !important;
+  }
+  .navMenu {
+    position: absolute;
+    width: 1198px;
+    top: 33px;
+    right: 0;
+    border: 1px solid #ebebeb;
+    background-color: #fff;
+    border-top: none;
+    padding: 25px 0;
+    z-index: 1000000;
+    display: none;
+  }
+  .navMenu:after {
+    content: "";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0;
+  }
+  .navMenu a {
+    color: #666;
+    text-decoration: none;
+  }
+  .menuLeft,
+  .menuCenter,
+  .menuRight {
+    float: left;
+  }
+  .menuLeft {
+    height: 110px;
+    width: 475px;
+    overflow: hidden;
+    padding-left: 30px;
+    /* background-color: teal; */
+    margin-right: -20px;
+    /* border-right: 1px solid #ebebeb; */
+  }
+  .menuLeft h2,
+  .menuCenter h2,
+  .menuRight h2 {
+    color: #f56a00;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    height: 22px;
+    font-family: "宋体";
+    padding-bottom: 8px;
+  }
+  .menuLeft li,
+  .menuCenter li,
+  .menuRight li {
+    height: 26px;
+    line-height: 26px;
+    float: left;
+    width: 95px;
+    text-align: left;
+  }
+  .menuLeft li a:hover {
+    color: #f56a00;
+    text-decoration: underline;
+  }
+  .menuCenter {
+    width: 475px;
+    height: 110px;
+    overflow: hidden;
+    padding-left: 30px;
+    margin-right: -20px;
+    border-left: 1px solid #ebebeb;
+    /* z-index: 5; */
+    /* background-color: thistle; */
+    border-bottom: none;
+  }
+  .menuCenter h2 {
+    color: #2263d4;
+  }
+  .menuCenter li a:hover {
+    color: #2263d4;
+    text-decoration: underline;
+  }
+  .menuRight {
+    width: 190px;
+    padding-left: 30px;
+    border-left: 1px solid #ebebeb;
+    height: 110px;
+    overflow: hidden;
+  }
+  .menuRight h2 {
+    color: #666;
+  }
+  .menuRight li a:hover {
+    color: #666;
+    text-decoration: underline;
+  }
+  .n {
+    position: relative;
+  }
+  .hot {
+    position: relative;
+  }
+</style>
+<body>
+  <div class="content">
+    <ul class="top-left">
+      <li>喵，欢迎来天猫</li>
+      <li>请登录</li>
+      <li>免费注册</li>
+    </ul>
+    <ul class="top-right">
+      <li class="topFirst">
+        我的淘宝 <i class="iconfont icon-down"></i>
+        <ul class="mine">
+          <li>已买到的宝贝</li>
+          <li>已卖出的宝贝</li>
+        </ul>
+      </li>
+      <li><i class="iconfont icon-ai66"></i>购物车</li>
+      <li class="topThird">
+        收藏夹<i class="iconfont icon-down"></i>
+        <ul class="collect">
+          <li>已买到的宝贝</li>
+          <li>已卖出的宝贝</li>
+        </ul>
+      </li>
+      <li></li>
+      <li class="phone">
+        <i class="iconfont icon-shouji"></i> 手机版
+        <div class="codeJiao"></div>
+        <div class="code">
+          <div class="codeTop"></div>
+          <div class="codeBot"></div>
+        </div>
+      </li>
+      <li>淘宝网</li>
+      <li class="topSev">
+        商家支持<i class="iconfont icon-down"></i>
+        <div class="surport">
+          <div class="surportTop">
+            <p>商家：</p>
+            <ul>
+              <li>商家中心</li>
+              <li>天猫规则</li>
+              <li>商家入驻</li>
+              <li>运营服务</li>
+              <li>商家品控</li>
+              <li>商家工具</li>
+              <li>天猫智库</li>
+              <li>喵言喵语</li>
+            </ul>
+          </div>
+          <div class="surportBottom">
+            <p>帮助</p>
+            <ul>
+              <li>帮助中心</li>
+              <li>问商友</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="webNav">
+        <i class="iconfont icon-sort"></i> 网站导航<i
+          class="iconfont icon-down"
+        ></i>
+        <div class="navMenu">
+          <div class="menuLeft">
+            <h2>热点推荐&ensp;HOT</h2>
+            <ul class="hotNav">
+              <li><a href="">天猫超市</a></li>
+              <li><a href="">喵鲜生</a></li>
+              <li><a href="" class="n">科技新品</a></li>
+              <li><a href="" class="hot">女装新品</a></li>
+              <li><a href="">酷玩街</a></li>
+              <li><a href="" class="hot">内衣新品</a></li>
+              <li><a href="">试美妆</a></li>
+              <li><a href="">运动新品</a></li>
+              <li><a href="" class="hot">时尚先生</a></li>
+              <li><a href="">精明妈咪</a></li>
+              <li><a href="" class="n">吃乐会</a></li>
+              <li><a href="">企业采购</a></li>
+              <li><a href="">会员积分</a></li>
+              <li><a href="">天猫国际</a></li>
+              <li><a href="">品质频道</a></li>
+            </ul>
+          </div>
+          <div class="menuCenter">
+            <h2>行业市场&ensp;Market</h2>
+            <ul class="marketNav">
+              <li><a href=""> 美妆</a></li>
+              <li><a href="">电器</a></li>
+              <li><a href="" class="hot">女装</a></li>
+              <li><a href="" class="hot">男装</a></li>
+              <li><a href="">女鞋</a></li>
+              <li><a href="">男鞋</a></li>
+              <li><a href="" class="hot">内衣</a></li>
+              <li><a href="">箱包</a></li>
+              <li><a href="">运动</a></li>
+              <li><a href="">母婴</a></li>
+              <li><a href="">家装</a></li>
+              <li><a href="">医药</a></li>
+              <li><a href="">食品</a></li>
+              <li><a href="" class="n">配饰</a></li>
+              <li><a href="">汽车</a></li>
+            </ul>
+          </div>
+          <div class="menuRight">
+            <h2>服务指南&ensp;Help</h2>
+            <ul class="helpNav">
+              <li><a href="">帮助中心</a></li>
+              <li><a href="">品质保证</a></li>
+              <li><a href="">特色服务</a></li>
+              <li><a href="">7天退换货</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+<script src="./jquery-3.1.1.min.js"></script>
+<script>
+  $(function () {
+    var top = {
+      init: function () {
+        this.getEle();
+        // this.addEle();
+        this.bindEvent();
+      },
+      getEle: function () {
+        this.phone = $(".phone");
+        this.codeJiao = $(".codeJiao");
+        this.code = $(".code");
+        this.topFirst = $(".topFirst");
+        this.mine = $(".mine");
+        this.topThird = $(".topThird");
+        this.collect = $(".collect");
+        this.topSev = $(".topSev");
+        this.surport = $(".surport");
+        this.n = $(".n");
+        this.h = $(".hot");
+        this.webNav = $(".webNav");
+        this.navMenu = $(".navMenu");
+        this.n.each(function (index, item) {
+          var span = $("<span></span>");
+          var w = 0;
+          if (index === 0) {
+            w = 48;
+          } else if (index === 1) {
+            w = 36;
+          } else {
+            w = 24;
+          }
+          span.css({
+            content: "",
+            display: "block",
+            width: "9px",
+            height: "10px",
+            background: "url(./img/n.png) no-repeat",
+            backgroundSize: "9px 10px",
+            position: "absolute",
+            left: w + "px",
+            top: "-7px",
+          });
+          span.appendTo(item);
+        });
+        this.h.each(function (index, item) {
+          var span = $("<span></span>");
+          var w = 0;
+          if (index === 0 || index === 1 || index === 2) {
+            w = 48;
+          } else {
+            w = 24;
+          }
+          span.css({
+            content: "",
+            display: "block",
+            width: "9px",
+            height: "10px",
+            background: "url(./img/h.png) no-repeat",
+            backgroundSize: "9px 10px",
+            position: "absolute",
+            left: w + "px",
+            top: "-7px",
+          });
+          span.appendTo(item);
+        });
+      },
+
+      bindEvent: function () {
+        this.slideEvent(this.topFirst, this.mine);
+        this.slideEvent(this.topThird, this.collect);
+        this.slideEvent(this.topSev, this.surport);
+        this.slideEvent(this.webNav, this.navMenu);
+        var _this = this;
+        this.phone.mouseover(function () {
+          _this.phone.css({
+            // 'background-color':' #fff',
+
+            height: "33px",
+            "border-left": " 1px solid #ebebeb",
+            "border-right": "1px solid #ebebeb",
+          });
+          _this.codeJiao.stop(true).slideDown(100);
+          _this.code.stop(true).slideDown(100);
+        });
+        this.phone.mouseout(function () {
+          _this.phone.css({
+            "text-decoration": " none",
+            // 'background-color':' #f2f2f2',
+            height: "32px",
+            "border-left": " 1px solid #f2f2f2",
+            "border-right": "1px solid #f2f2f2",
+          });
+          _this.code.stop(true).slideUp(100);
+          _this.codeJiao.stop(true).slideUp(100);
+        });
+      },
+      slideEvent: function (parent, son) {
+        var _this = this;
+        parent.mouseover(function () {
+          parent.css({
+            "text-decoration": " underline",
+            "background-color": " #fff",
+            height: "33px",
+            "border-left": " 1px solid #ebebeb",
+            "border-right": "1px solid #ebebeb",
+          });
+          son.stop(true).slideDown(10);
+          son.css({
+            color: "#666",
+          });
+          son.find("li").mouseenter(function () {
+            $(this).css({
+              color: "#ff0036",
+            });
+          });
+          son.find("li").mouseleave(function () {
+            $(this).css({
+              color: "#666",
+            });
+          });
+        });
+        parent.mouseleave(function () {
+          parent.css({
+            "text-decoration": " none",
+            "background-color": " #f2f2f2",
+            height: "32px",
+            "border-left": " 1px solid #f2f2f2",
+            "border-right": "1px solid #f2f2f2",
+          });
+          son.stop(true).slideUp(10);
+          son.css({
+            color: "#666",
+          });
+        });
+      },
+    };
+    top.init();
+  });
+</script>
