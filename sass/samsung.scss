@@ -1,0 +1,330 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    width: 1230px;
+    margin: 0 auto;
+    height: 92px;
+    position: relative;
+    h1{
+        width: 280px;
+        height: 92px;
+        float: left;
+        a{
+            display: block;
+            width: 190px;
+            height: 30px;
+            margin-top: 28px;
+            background: url('//img.alicdn.com/tfs/TB11ojWRXXXXXafaFXXXXXXXXXX-190-27.png') no-repeat;
+        }
+    }
+    .sousuo{
+        width: 597px;
+        margin-top: 24px;
+        float: left;
+        overflow: hidden;
+        .in{
+            width: 590px;
+            height: 36px;
+            overflow: hidden;
+            .sousuoCon{
+                width: 504px;
+                height: 36px;
+                box-sizing: border-box;
+                border: 3px solid #ff0036;
+                border-right: none;
+                float: left;
+                color: #333;
+                outline: none;
+                font-size: 14px;
+                text-indent: 8px;
+            }
+            .btn{
+                float: left;
+                width: 86px;
+                height: 36px;
+                background-color: #ff0036;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                // font-weight: bold;
+                letter-spacing: 5px;
+                outline: none;
+            }
+        }
+        .rec{
+            margin-top: 5px;
+            list-style: none;
+            overflow: hidden;
+            width: 590px;
+            height: 16px;
+            margin-left: -12px;
+            li{
+                float: left;
+                border-left: 1px solid #ccc;
+                line-height: 1.1;
+                padding: 0 12px;
+                font-size: 12px;
+                height: 14px;
+                line-height: 14px;
+                color: #999;
+            }
+            li:hover{
+                color: #ff0036;
+                cursor: pointer;
+            }
+        }
+    }
+    img{
+        position: absolute;
+        width: 190px;
+        height: 80px;
+        cursor: pointer;
+        right: 0;
+        top: 0;
+    }
+
+}
+.introCon{
+    width: 100%;
+    min-width: 1230px;
+    margin: 0 auto;
+    height: 160px;
+
+    .intro{
+    max-width: 1600px;
+    min-width: 1230px;
+    height: 160px;
+    margin: 0 auto;
+    background: url('../img/samsung.png') no-repeat center 0;
+    background-size: cover;
+    }
+}
+.crumb{
+    width: 1230px;
+    height: 38px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    margin: 8px auto 0;
+    line-height: 27px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 12px;
+    color: #666;
+    font-family: "宋体";
+    position: relative;
+    a{
+        text-decoration: none;
+        color: #666;
+        padding-left: 40px;
+        // padding-right: 8px;
+    }
+    a:hover{
+        color: #ff0036;
+        text-decoration: underline;
+    }
+    .jiao{
+        font-weight: bold;
+        font-size: 14px;
+        color: #ccc;
+    }
+    .pp{
+        display: inline-block;
+        width: 136px;
+        height: 24px;
+        text-align: center;
+        border: 1px dotted #ff0036;
+        border-top:1px solid #ff0036;
+        color: #ff0036;
+        border-radius: 2px;
+        margin-right: 4px;
+    }
+    .pplast{
+        display: inline-block;
+        width: 125px;
+        height: 20px;
+        line-height: 21px;
+        color: #666;
+        padding: 0 25px 0 12px;
+        margin-right: 15px;
+        margin-top: 4px;
+        border: 1px solid #ccc;
+        background: url(../img/sousuo.png) no-repeat;
+        background-position: 140px center;
+        background-size: 20px 15px;
+    }
+    .tot{
+        position: absolute;
+        right: 10px;
+        top:4px;
+        color: #999;
+        em{
+            font-style: normal;
+            font-weight: bolder;
+        }
+    }
+}
+.kinds{
+    width: 1230px;
+    height: 37px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #ff0036;
+    border-color: #E6E2E1 #E6E2E1 #D1CCC7;
+    li{
+        list-style: none;
+        float: left;
+        height: 35px;
+        font-size: 12px;
+        line-height: 30px;
+        width: 180px;
+        color: #806f66;
+    }
+    li:hover{
+        color: #ff0036;
+    }
+    .kind1{
+        width: 118px;
+        height: 100%;
+        background:#F7F5F5 url('../img/right.png') no-repeat 8px 7px;
+        background-size: 16px 16px;
+        color: #B0A59F;
+        text-indent: 27px;
+        margin-right: 30px;
+    }
+    .kind1:hover{
+        color: #B0A59F;
+    }
+    
+}
+.paihang{
+        width: 1230px;
+        height: 34px;
+        margin: 10px auto;
+        background: url('../img/pai.png') no-repeat center center;
+        background-size: cover;
+        cursor: pointer;
+    }
+.samCon{
+    width: 1230px;
+    margin:10px auto 0;
+    overflow: hidden;
+    .sam{
+    width: 1250px;
+    overflow: hidden;
+       
+        .samlist{
+            list-style: none;
+            float: left;
+            width: 220px;
+            height: 366px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 4px;
+            border: 1px solid #ccc;
+            position: relative;
+            .mask{
+                position: absolute;
+                width: 224px;
+                height: 372px;
+                border: 3px solid #ff0036;
+                left: -1px;
+                top: -1px;
+                display: none;
+            }
+
+            img{
+                width: 210px;
+                height: 210px;
+                vertical-align: middle;
+            }
+            .simg{
+                height: 36px;
+                margin-top: 10px;
+                overflow: hidden;
+                width: 185px;
+                li{
+                    list-style: none;
+                    height: 26px;
+                    width: 26px;
+                    float: left;
+                    padding: 3px;
+                    margin-right: 5px;
+                    border: 1px solid #999;
+                    img{
+                        width: 26px;
+                        height: 26px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .samprice{
+                height: 30px;
+                font-size: 12px;
+                line-height: 30px;
+                color: #ff0036;
+
+            }
+            .samtit{
+                cursor: pointer;
+
+                font-size: 12px;
+               line-height: 14px;
+                width: 220px;
+                white-space: nowrap;
+                color: #666;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .shop{
+                cursor: pointer;
+                font-size: 12px;
+               line-height: 14px;
+               padding-top: 10px;
+               padding-bottom: 10px;
+               border-bottom: 1px solid #ccc;
+                width: 220px;
+                white-space: nowrap;
+                color: #999;
+                text-decoration: underline;
+                text-overflow: ellipsis;
+            }
+            .cheng{
+                overflow: hidden;
+                width: 220px;
+                font-size: 12px;
+                span{
+                    float: left;
+
+                }
+                .cheng1{
+                    width: 155px;
+                    color: #999;
+                    height: 37px;
+                    line-height: 37px;
+                    border-right: 1px solid #ccc;
+                    padding-left: 5px;
+                    i{
+                        color: #b57c5b;
+                        font-weight: bold;
+                    }
+                }
+                .cheng2{
+                    cursor: pointer;
+                    width: 50px;
+                    background: url('../img/ww.png') no-repeat 15px center;
+                    background-size: 32px 26px;
+                    height: 37px;
+                }
+            }
+        }
+        li:hover{
+            cursor: pointer;
+            border: 1px solid #ff0036;
+             .mask{
+                display: block;
+            }
+        }
+    }
+}
+    
