@@ -18,6 +18,7 @@ $(function(){
             this.$num=$('.num');
             this.$colorKinds=$('.colorKinds');
             this.$href=$(location).attr('href');
+            this.obj=null;
         },
         bindEvent:function(){   
             var id=Number(this.$href.split("?")[1].split("=")[1]);
@@ -29,7 +30,8 @@ $(function(){
                 success:function(json){
                     $(json).each(function(index,item){
                         if(item.id===id){
-                            console.log(item);
+                            _this.obj=item;
+                            $('.slogo').text(item.shop);
                             _this.$biaoti.text(item.tit);
                             _this.$pprice.text(item.price);
                             _this.$num.text(item.sold);
@@ -74,7 +76,53 @@ $(function(){
                             }
                         }
                     });
-                    
+                    $('.putCar').click(function(){
+                        let carNum=[];
+                        var flag2=true;
+                        if(localStorage.getItem('carNum')){
+                            carNum=JSON.parse(localStorage.getItem('carNum'));
+                        }
+                        var id=_this.obj.id;
+                        $(carNum).each(function(index,item){
+                            if(item.id===id){
+                                item.num++;
+                                flag2=false;
+                                return;
+                            }
+                        });
+
+                        if(flag2){
+                            carNum.push({id:id,num:1});
+                        }
+                        localStorage.setItem('carNum',JSON.stringify(carNum));
+                        
+                        $('.carNum').text(carNum.length);
+                        
+                        
+
+                        alert('加入购物车成功！');
+                        // location.reload();
+                        let arr=[];
+                        var flag=true;
+                        if(localStorage.getItem('carList')){
+                            arr=JSON.parse(localStorage.getItem('carList'));
+                        }
+                        var id=_this.obj.id;
+
+                        $(arr).each(function(index,item){
+                            if(item.id===id){
+                                item.num++;
+                                flag=false;
+                                return;
+                            }
+                        });
+                        if(flag){
+                            arr.push({id:id,num:1});
+                
+                        }
+                        localStorage.setItem('carList',JSON.stringify(arr));
+                        console.log(localStorage.getItem('carList'));
+                    })
 
                 }
             });
@@ -283,6 +331,7 @@ $(function(){
                     $('.numbers').text('1');
                 }
             })
+            
         }
 
     }

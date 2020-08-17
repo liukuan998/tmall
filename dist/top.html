@@ -401,6 +401,9 @@
     color: #ff0036;
     cursor: pointer;
   }
+  .carNum{
+    color: #ff0036;
+  }
 </style>
 <body>
   <div class="content">
@@ -418,7 +421,7 @@
           <li>已卖出的宝贝</li>
         </ul>
       </li>
-      <li><i class="iconfont icon-ai66"></i>购物车</li>
+      <li class="buyCar"><i class="iconfont icon-ai66"></i>购物车<i class="carNum">0</i></li>
       <li class="topThird">
         收藏夹<i class="iconfont icon-down"></i>
         <ul class="collect">
@@ -532,6 +535,14 @@
         display:'none'
       })
     }
+    if(localStorage.getItem('carNum')){
+          $('.carNum').text(JSON.parse(localStorage.getItem('carNum')).length);
+    }else{
+      $('.carNum').text('0');
+    }
+    $('.buyCar').click(function(){
+      location.href='shoppingCar.html';
+    })
     if(localStorage.getItem('name')){
           $('.welcome').text(`Hi ,  ${localStorage.getItem('name')}`)
           $('.pleaseLogin').text('积分  22')
@@ -547,7 +558,10 @@
     }
     $('.pleaseRegister').click(function(){
           location.href='login.html'
-          localStorage.setItem('name','')
+          localStorage.setItem('name','');
+          localStorage.removeItem('carList');
+          localStorage.removeItem('carNum');
+          
      })
     var top = {
       init: function () {

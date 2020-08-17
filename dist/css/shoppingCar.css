@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.header {
+  width: 1230px;
+  height: 95px;
+  margin: 0 auto; }
+  .header h1 {
+    float: left;
+    margin-top: 25px;
+    width: 181px;
+    height: 45px;
+    background: url("//gw.alicdn.com/tfs/TB1boCXfmCWBuNjy0FhXXb6EVXa-800-600.png") no-repeat;
+    background-position: -110px top; }
+  .header .search {
+    float: right;
+    height: 35px;
+    margin-top: 25px; }
+    .header .search .searchCon {
+      width: 422px;
+      height: 35px;
+      box-sizing: border-box;
+      float: left;
+      border: 3px solid #f50;
+      text-indent: 10px;
+      outline: none; }
+    .header .search .btn {
+      width: 93px;
+      height: 35px;
+      float: left;
+      color: #fff;
+      background: #f50;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 8px;
+      border: none;
+      outline: none; }
+
+.bigT {
+  width: 1230px;
+  height: 33px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 2px solid #ccc; }
+  .bigT li {
+    list-style: none;
+    float: left;
+    margin-bottom: 8px;
+    height: 25px;
+    text-align: center;
+    font-weight: bold; }
+  .bigT .allgoods {
+    color: #F40;
+    width: 124px;
+    height: 33px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 2px solid #F40; }
+  .bigT .jiangjia {
+    width: 124px;
+    height: 22px;
+    font-size: 16px;
+    text-align: center;
+    border-left: 1px solid #eee; }
+    .bigT .jiangjia .jiang {
+      color: #F40; }
+  .bigT .jiesuan {
+    width: 55px;
+    height: 25px;
+    float: right;
+    font-size: 12px;
+    cursor: pointer;
+    color: #fff;
+    background: #F40;
+    font-weight: normal;
+    line-height: 25px; }
+  .bigT .allprice {
+    float: right;
+    line-height: 25px;
+    text-align: center;
+    color: #F40;
+    font-size: 12px;
+    margin-right: 10px;
+    font-weight: normal; }
+  .bigT .word {
+    font-size: 12px;
+    float: right;
+    line-height: 25px;
+    margin-right: 10px;
+    font-weight: normal; }
+
+.tit {
+  width: 1230px;
+  height: 50px;
+  margin: 0 auto;
+  color: #3c3c3c;
+  font-size: 12px;
+  line-height: 50px;
+  padding: 0; }
+  .tit .s6 {
+    width: 65px;
+    padding-left: 15px;
+    text-align: center; }
+    .tit .s6 .all {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 10px; }
+  .tit .s1 {
+    margin-left: 80px; }
+  .tit .s2 {
+    margin-left: 500px; }
+  .tit .s3 {
+    margin-left: 80px; }
+  .tit .s4 {
+    margin-left: 80px; }
+  .tit .s5 {
+    margin-left: 120px; }
+
+.list {
+  width: 1230px;
+  margin: 0 auto;
+  overflow: hidden; }
+  .list li {
+    list-style: none;
+    margin-top: 10px;
+    width: 1190px;
+    height: 90px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    overflow: hidden; }
+    .list li .pic {
+      width: 80px;
+      height: 80px;
+      float: left;
+      padding: 4px;
+      border: 1px solid #eee; }
+      .list li .pic img {
+        width: 80px;
+        height: 80px;
+        vertical-align: middle; }
+    .list li .choose {
+      float: left;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px; }
+    .list li .title {
+      float: left;
+      line-height: 14px;
+      width: 226px;
+      color: #3c3c3c;
+      font-size: 12px;
+      text-indent: 10px;
+      margin-left: 10px;
+      height: 85px;
+      background: url(../img/tit.png) no-repeat left bottom;
+      background-size: 80px 40px; }
+    .list li .detail {
+      float: left;
+      width: 212px;
+      height: 85px;
+      padding-top: 4px;
+      color: #9c9c9c;
+      font-size: 12px;
+      margin-left: 30px;
+      line-height: 18px; }
+    .list li .price {
+      float: left;
+      margin-left: 80px;
+      font-size: 12px; }
+    .list li .num {
+      float: left;
+      width: 100px;
+      height: 41px;
+      margin-top: 20px;
+      margin-left: 25px;
+      position: relative; }
+      .list li .num .jian {
+        position: absolute;
+        left: 30px;
+        top: -20px;
+        height: 41px;
+        border: 1px solid #ccc;
+        background: #f0f0f0;
+        width: 20px;
+        outline: none; }
+      .list li .num .plus {
+        position: absolute;
+        width: 20px;
+        top: -20px;
+        left: 90px;
+        border: 1px solid #ccc;
+        background: #f0f0f0;
+        outline: none;
+        height: 41px; }
+      .list li .num .numV {
+        position: absolute;
+        left: 50px;
+        top: -20px;
+        width: 40px;
+        height: 41px;
+        box-sizing: border-box;
+        float: left;
+        text-align: center; }
+    .list li .count {
+      float: left;
+      margin-left: 60px;
+      width: 50px;
+      color: #F40;
+      font-size: 12px; }
+    .list li .remove {
+      margin-left: 100px;
+      color: red;
+      font-size: 12px;
+      cursor: pointer; }
+
+.tit.titB {
+  background: #e5e5e5;
+  position: relative; }
+  .tit.titB span {
+    margin-left: 50px; }
+  .tit.titB .delete:hover, .tit.titB .move:hover, .tit.titB .share:hover {
+    color: #F40;
+    cursor: pointer; }
+  .tit.titB .yixuan {
+    margin-left: 370px; }
+    .tit.titB .yixuan .yiNum {
+      margin: 0 5px;
+      color: #F40;
+      font-size: 16px;
+      font-weight: bold; }
+  .tit.titB .heji {
+    margin-left: 30px; }
+  .tit.titB .totalPrice {
+    margin: 0 5px;
+    color: #F40;
+    font-size: 20px;
+    font-weight: bold; }
+  .tit.titB .buy {
+    cursor: pointer;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 8px;
+    background: #999;
+    position: absolute;
+    top: 0;
+    right: 0; }

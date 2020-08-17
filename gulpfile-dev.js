@@ -76,4 +76,4 @@ task('connect',async ()=>{
 })
 
 // 构建开发包
-task('dev',series('delDist','img','sass','json','php','css','script','html','connect','watch'))
+task('dev',series('delDist','img','sass','json','php','script','html','connect','watch'))

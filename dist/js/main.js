@@ -482,7 +482,9 @@ var mySwiper = new Swiper ('.swiper-container', {
 //进入三星页面
 $('.btn').click(function(){
     console.log(123);
-    if($('.searchCon').val().trim()==='三星'){
-        location.href='./samsung.html'
+    if($('.searchCon').val().trim()){
+        location.href='./samsung.html';
+        localStorage.setItem('search',$('.searchCon').val().trim());
+
     }
 })

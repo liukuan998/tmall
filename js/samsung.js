@@ -9,6 +9,31 @@ $(function(){
             this.$sam=$(".sam");
         },
         bindEvent:function(){
+
+            //本页搜索框
+            $('.btn').click(function(){
+                if($('.sousuoCon').val().trim()){
+                    localStorage.setItem('search',$('.sousuoCon').val().trim());
+                    location.reload();
+                }
+            })
+
+            var name=localStorage.getItem('search');
+            $(".pp").text('品牌：'+name+'  X');
+            $('.sousuoCon').attr('placeholder',name);
+            $('.pplast').text(name);
+            if(name.indexOf("华为")!==-1){
+                $('.intro').css({
+                    "background": "url('../img/huawei.png') no-repeat center 0",
+                    "background-size": "cover"
+                })
+            } else if(name.indexOf("米")!==-1){
+                $('.intro').css({
+                    "background": "url('../img/mi.png') no-repeat center 0",
+                    "background-size": "cover"
+                })
+            }
+            var count=0;
             var _this=this;
             $.ajax({
 
@@ -18,7 +43,9 @@ $(function(){
                 success:function(json){
                     
                     $(json).each(function(index,item){
-                        var str='';
+                        if(item.tit.indexOf(name)!==-1){
+                            count++;
+                            var str='';
                         $(item.simg).each(function(i,t){
                            
                             str+='<li><img src="'+t+'" alt=""></li>';
@@ -38,7 +65,7 @@ $(function(){
                            ${item.tit}
                         </p>
                         <p class="shop">
-                            三星官方旗舰店 等更多商家&gt;
+                            ${item.shop} 等更多商家&gt;
                             
                         </p>
                         <p class="cheng">
@@ -53,8 +80,11 @@ $(function(){
                     
                        
                         _this.$sam.append(newLi);
+                        }
+                        
                        
                     })
+                    $('.countN').text(count);
                     $('.sam').on('click','.samlist',function(){
                         // console.log($(this).attr('num'));
                         location.href='./detail.html?id='+$(this).attr('num')

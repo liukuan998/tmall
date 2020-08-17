@@ -33,19 +33,30 @@ task('script', async ()=>{
   .pipe(load.rev())
   .pipe(load.babel({presets: ['@babel/env']}))
   .pipe(load.uglify())
-  .pipe(dest('./dist/script'))
+  .pipe(dest('./dist/js'))
   .pipe(load.rev.manifest())
   .pipe(dest('./rev/js'))
 })
 
 // 处理html
 task('html', async ()=>{
-  src(['./rev/**/*.json','./pages/*.html'])
+  src(['./rev/**/*.json','./*.html'])
   .pipe(load.revCollector({replaceReved:true}))
   .pipe(load.minifyHtml())
-  .pipe(dest('./dist/pages'))
+  .pipe(dest('./dist'))
 })
-
+// 处理json
+task('json', async ()=>{
+  src('./data/*.json')
+  .pipe(dest('./dist/data'))
+  .pipe(load.connect.reload())
+})
+// 处理php
+task('php', async ()=>{
+  src('./php/*.php')
+  .pipe(dest('./dist/php'))
+  .pipe(load.connect.reload())
+})
 // 监听文件变化
 // task('watch',async ()=>{
 //   watch('./image/*.*',series('image'));
@@ -64,4 +75,4 @@ task('connect',async ()=>{
 })
 
 // 构建生产包
-task('build',series('delDist','image','sass','script','html','connect'))
+task('build',series('delDist','image','sass','json','php','script','html','connect'))

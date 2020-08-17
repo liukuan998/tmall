@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0; }
@@ -29,11 +30,14 @@
     .header .headerCon .slogo {
       width: 130px;
       height: 38px;
+      text-align: center;
       cursor: pointer;
       margin-top: 14px;
+      font-size: 14px;
+      font-family: "宋体";
+      line-height: 38px;
       border-right: 1px solid #ddd;
       float: left;
-      background: url(../img/slogo.png) no-repeat center center;
       background-size: 100px 36px; }
     .header .headerCon .wuliu {
       width: 132px;
