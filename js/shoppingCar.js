@@ -28,7 +28,7 @@ $(function(){
                 var goods=JSON.parse(localStorage.getItem('carList'));
                 var allNum=goods.length;
                 $.ajax({
-                    url:'../data/samsung.json',
+                    url:'./data/samsung.json',
                     type:'get',
                     dataType:'json',
                     success:function(json){
@@ -183,7 +183,7 @@ $(function(){
                     var total=0;
                     $('.list .choose').each(function(index,item){
                         if(!item.checked){
-                            flag=false;
+                            
                             $('.yiNum').text('0');
                         }else{
                             $('.yiNum').text(allNum);
@@ -209,7 +209,7 @@ $(function(){
                     var total=0;
                     $('.list .choose').each(function(index,item){
                         if(!item.checked){
-                            flag=false;
+                          
                             $('.yiNum').text('0');
                         }else{
                             $('.yiNum').text(allNum);
@@ -226,7 +226,7 @@ $(function(){
                     console.log(123);
                     $('.list .choose').each(function(index,item){
                         if(!item.checked){
-                            flag=false;
+                            
                         }else{
                             allNum--;
 

@@ -214,21 +214,21 @@ $(function(){
             this.$tit2=$(".tabConTit2");
             this.$con1=$(".tabConbot1");
             this.$con2=$(".tabConbot2");
-            this.timer=null;
+            this.timer=1;
             this.prev=1;
         },
         bindEvent:function(){
             var _this=this;
             this.autoplay();
             this.$tit1.mouseover(function(){
-                clearInterval(timer);
+                clearInterval(_this.timer);
                 _this.getGreen(this);
                 _this.getWhite(_this.$tit2);
                 _this.$con1.show();
                 _this.$con2.hide();
             });
             this.$tit2.mouseover(function(){
-                clearInterval(timer);
+                clearInterval(_this.timer);
                 _this.getGreen(this);
                 _this.getWhite(_this.$tit1);
                 _this.$con1.hide();
@@ -258,7 +258,7 @@ $(function(){
         },
         autoplay:function(){
             var _this=this;
-            timer=setInterval(function(){
+            this.timer=setInterval(function(){
                 // console.log(_this);
                 if(_this.prev===0){
                     _this.getGreen(_this.$tit1);
